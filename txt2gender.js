@@ -210,25 +210,3 @@ function sendMessage(form) {
   }
 }
 
-function handleButton(element) {
-  feedtext = feedback.Text;
-  feedtext = feedtext.value.toLowerCase();
-  console.log(feedtext);
-  element.textContent = "Message sent!";
-
-  const request = new XMLHttpRequest();
-  request.open(
-    "POST",
-    "https://discord.com/api/webhooks/1060291236533125160/-TTSywuHONsnQ4AuS8gxAf4eZO5aVrZspNtwQS1x8BnPdZ8RCaETR3DFFbkjHAcbBgmb"
-  );
-  request.setRequestHeader("Content-type", "application/json");
-
-  const params = {
-    username: "Gender-Guesser",
-    avatar_url:
-      "https://s2.qwant.com/thumbr/0x380/7/f/4b2325a1e51d3c20b139dd6aaf1b572d9e68359859857fd4f67d289bae0027/Coffee-clip-art-photo-2.png?u=https%3A%2F%2Fclipartix.com%2Fwp-content%2Fuploads%2F2016%2F04%2FCoffee-clip-art-photo-2.png&q=0&b=1&p=0&a=0",
-    content: feedtext
-  };
-
-  request.send(JSON.stringify(params));
-}
